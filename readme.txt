@@ -1,0 +1,27 @@
+=== FacetWP - FS Facets Types ===
+Contributors: Faire Savoir
+Tags: facetwp, facets types, fs
+Requires at least: 5.0
+Tested up to: 5.7.2
+Requires PHP: 7.0
+
+This plugin is powered by Faire-Savoir. It creates useful Facets Types for the FacetWP plugin.
+
+== Description ==
+
+This plugin creates useful Facets Types for the FacetWP plugin.<br>
+See the documentation for more informations.
+
+
+== Installation ==
+
+1. Installation must be done **manually**
+2. This plugin requires "FacetWP" plugin
+
+
+== Changelog ==
+
+= 1.0.0 - (13/07/2021) =
+
+* Dev - First version of the plugin.
+* Add - Documentation.
