@@ -21,10 +21,6 @@ See the documentation for more informations.
 
 == Changelog ==
 
-= 1.0.1 - (16/07/2021) =
-
-* Fix - The <code>pVal()</code> function does not work anymore in the <code>facetwp v3.8.x</code> plugin.
-
 = 1.0.0 - (13/07/2021) =
 
 * Dev - First version of the plugin.
