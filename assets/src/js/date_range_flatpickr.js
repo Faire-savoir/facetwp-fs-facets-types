@@ -80,8 +80,8 @@
 	});
 
 	FWP.hooks.addAction('facetwp/refresh/date_range_flatpickr', function (element, facet_name) {		
-		var min = element.find('.facetwp-date-min').val() || '';
-		var max = element.find('.facetwp-date-max').val() || '';
+		var min = element.find('.facetwp-date-min').pVal() || '';
+		var max = element.find('.facetwp-date-max').pVal() || '';
 		FWP.facets[facet_name] = ('' !== min || '' !== max) ? [min, max] : [];
 	});
 
