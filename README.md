@@ -1,11 +1,11 @@
-# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.0.0-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
+# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.1.0-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
 
 This plugin creates useful Facets Types for the FacetWP plugin.
 
 ## Informations
 
 - Requires at least : ![wordpress version](https://img.shields.io/badge/WP-5.3.2-orange.svg)
-- Tested up to : ![wordpress version](https://img.shields.io/badge/WP-5.7.2-green.svg)
+- Tested up to : ![wordpress version](https://img.shields.io/badge/WP-5.8.1-green.svg)
 - Requires PHP : ![wordpress version](https://img.shields.io/badge/PHP-7.0-blue.svg)
 
 ## Description
@@ -23,6 +23,11 @@ This plugin requires "FacetWP" plugin
 Use automatic updater.
 
 ## Changelog
+
+### [1.1.0] - (10/09/2021)
+
+* Add - Leaflet Map addon.
+* Dev - DateRange Flatpickr optimisations.
 
 ### [1.0.0] - (13/07/2021)
 

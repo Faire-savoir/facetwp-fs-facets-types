@@ -21,6 +21,11 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.1.0 - (10/09/2021) =
+
+* Add - Leaflet Map addon.
+* Dev - DateRange Flatpickr optimisations.
+
 = 1.0.0 - (13/07/2021) =
 
 * Dev - First version of the plugin.

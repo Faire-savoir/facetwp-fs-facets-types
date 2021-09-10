@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FacetWP - FS Facets Types
  * Description: Add Facets Types created by FS
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Faire Savoir
  * Author URI:  https://www.faire-savoir.com/
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class FacetWP_FS_Facets_Types {
 
-	var $version = '1.0.0';
+	var $version = '1.1.0';
 	var $plugin_name = 'FacetWP - FS Facets Types';
 	var $plugin_id = 'facetwp-fs-facets-types';
 
@@ -25,6 +25,7 @@ class FacetWP_FS_Facets_Types {
 		$url = plugins_url( '/', __FILE__ );
 
 		// CONSTS
+		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_VERSION',$this->version );
 		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_ID',$this->plugin_id );
 		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_NAME',$this->plugin_name );
 		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_URL',$url );
@@ -83,7 +84,7 @@ class FacetWP_FS_Facets_Types {
 				
 				add_action( 'admin_notices', function(){
 					echo '<div class="error"><p>';
-					printf(__('The required plugin %s is missing to install %s.'), '<b>"Tourinsoft WP - CORE"</b>', '<b>"'.$this->plugin_name.'"</b>');
+					printf(__('The required plugin %s is missing to install %s.'), '<b>"FacetWP"</b>', '<b>"'.$this->plugin_name.'"</b>');
 					echo'</p></div>';
 				});
 
@@ -100,9 +101,11 @@ class FacetWP_FS_Facets_Types {
 	 */
 	public function init() {
 		include( 'includes/date_range_flatpickr.php' );
+		include( 'includes/leaflet_map.php' );
 		
 		add_filter( 'facetwp_facet_types', function( $facet_types ) {
 			$facet_types['date_range_flatpickr'] = new FacetWP_FS_DateRange_Flatpickr();
+			$facet_types['leaflet_map'] = new FacetWP_FS_Leaflet_Map();
 			return $facet_types;
 		});
 	}

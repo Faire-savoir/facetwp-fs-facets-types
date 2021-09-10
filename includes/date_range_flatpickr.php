@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) or exit;
 
 /**
- * Leaflet Map facet class
+ * DateRange_Flatpickr facet class
  */
 class FacetWP_FS_DateRange_Flatpickr {
 
@@ -109,17 +109,17 @@ class FacetWP_FS_DateRange_Flatpickr {
             'locale'    => $locale,
             'clearText' => __( 'Clear', 'fwp-front' ),
         ];
-        FWP()->display->assets['flatpickr.css'] = FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/vendor/flatpickr/flatpickr.min.css';
-        FWP()->display->assets['flatpickr.js'] = FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/vendor/flatpickr/flatpickr.min.js';
+        FWP()->display->assets['flatpickr.css'] = [ FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/vendor/flatpickr/flatpickr.min.css', FACETWP_FS_FACETS_TYPES_PLUGIN_VERSION ];
+        FWP()->display->assets['flatpickr.js'] = [ FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/vendor/flatpickr/flatpickr.min.js', FACETWP_FS_FACETS_TYPES_PLUGIN_VERSION ];
         if ( 'on' == FWP()->helper->get_setting( 'debug_mode', 'off' ) ) {
             $front_script = FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/src/js/date_range_flatpickr.js';
         }else{
             $front_script = FACETWP_FS_FACETS_TYPES_PLUGIN_URL . 'assets/js/date_range_flatpickr.min.js';
         }
-        FWP()->display->assets['date_range_flatpickr.js'] = $front_script;
+        FWP()->display->assets['date_range_flatpickr.js'] = [ $front_script, FACETWP_FS_FACETS_TYPES_PLUGIN_VERSION ];
 
         if ( 'en' != $locale ) {
-            FWP()->display->assets['flatpickr-l10n.js'] = FACETWP_FS_FACETS_TYPES_PLUGIN_URL . "assets/vendor/flatpickr/l10n/$locale.js";
+            FWP()->display->assets['flatpickr-l10n.js'] = [ FACETWP_FS_FACETS_TYPES_PLUGIN_URL . "assets/vendor/flatpickr/l10n/$locale.js", FACETWP_FS_FACETS_TYPES_PLUGIN_VERSION ];
         }
     }
 
