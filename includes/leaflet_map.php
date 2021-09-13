@@ -82,7 +82,7 @@ class FacetWP_FS_Leaflet_Map {
 
 		$output = '<div id="facetwp-leaflet-map" style="width:' . $width . '; height:' . $height . '"></div>';
 
-		if ( isset($this->map_facet['filtering']) && $this->map_facet['filtering'] == 'yes' ){
+		if ( isset($params['facet']['filtering']) && $params['facet']['filtering'] == 'yes' ){
 			$output .= '<div class="filtering-btn"><button class="facetwp-leaflet-map-filtering' . $class . '">' . esc_html( $btn_label ) . '</button></div>';
 		}
 		return $output;
