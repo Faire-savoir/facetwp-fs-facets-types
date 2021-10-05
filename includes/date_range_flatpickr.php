@@ -9,6 +9,7 @@ class FacetWP_FS_DateRange_Flatpickr {
 
     function __construct() {
         $this->label = __( 'FS - Date Range (Flatpickr)', 'fwp-front' );
+        add_filter( 'facetwp_index_row', array( $this, 'date_format' ), 1, 2 );
     }
 
 
@@ -46,7 +47,6 @@ class FacetWP_FS_DateRange_Flatpickr {
         $fields       = isset( $facet['fields'] ) ? $facet['fields'] : 'both';
         $compare_type = empty( $facet['compare_type'] ) ? 'basic' : $facet['compare_type'];
         $is_dual      = ! empty( $facet['source_other'] );
-        $date_format  = empty( $facet['date_format'] ) ? '' : $facet['date_format'];
 
         if ( $is_dual && 'basic' != $compare_type ) {
             if ( 'exact' == $fields ) {
@@ -55,15 +55,6 @@ class FacetWP_FS_DateRange_Flatpickr {
 
             $min = ( false !== $min ) ? $min : '0000-00-00';
             $max = ( false !== $max ) ? $max : '3000-12-31';
-
-            /**
-             * Change compare date format if data not stocked in the format YYYY-MM-DD like ACF Field
-             */
-
-            if ( ! empty($date_format) ) {
-                $min = date( $date_format , strtotime($min) );
-                $max = date( $date_format , strtotime($max) );
-            }
 
             /**
              * Enclose compare
@@ -174,15 +165,6 @@ class FacetWP_FS_DateRange_Flatpickr {
         </div>
         <div class="facetwp-row">
             <div>
-                <div class="facetwp-tooltip">
-                    <?php _e('Compare date format', 'fwp-front'); ?>:
-                    <div class="facetwp-tooltip-content">See available <a href="https://www.php.net/manual/fr/datetime.format.php" target="_blank">formatting date</a></div>
-                </div>
-            </div>
-            <div><input type="text" class="facet-date-format" placeholder="Ymd" /></div>
-        </div>
-        <div class="facetwp-row">
-            <div>
                 <div><?php _e('Placeholder', 'fwp-front'); ?>:</div>
             </div>
             <div>
@@ -284,5 +266,28 @@ class FacetWP_FS_DateRange_Flatpickr {
         $post_ids = empty( $post_ids ) ? [ 0 ] : $post_ids;
         return ' AND post_id IN (' . implode( ',', $post_ids ) . ')';
     }
+
+    function date_format( $params, $class ) {
+
+		$facet = FWP()->helper->get_facet_by_name( $params['facet_name'] );
+
+		if ( false !== $facet && 'date_range_flatpickr' == $facet['type'] ) {
+            if( strlen( $params['facet_value'] ) == 8 && strpos( $params['facet_value'], '-' ) === FALSE) {
+
+                $debut = substr( $params['facet_value'], 0, 4 ) . '-' . substr( $params['facet_value'], 4, 2 ) . '-' . substr( $params['facet_value'], 6, 2);
+                $params['facet_value'] = $debut;
+            }
+
+            if( strlen( $params['facet_display_value'] ) == 8 && strpos( $params['facet_display_value'], '-' ) === FALSE) {
+                
+                $fin   = substr( $params['facet_display_value'], 0, 4 ) . '-' . substr( $params['facet_display_value'], 4, 2 ) . '-' . substr( $params['facet_display_value'], 6, 2);
+                $params['facet_display_value'] = $fin;
+            }
+		}
+
+        
+
+		return $params;
+	}
 
 }

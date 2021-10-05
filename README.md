@@ -26,7 +26,7 @@ Use automatic updater.
 
 ### [1.1.1] - (05/10/2021)
 
-* Add - New option for date format search.
+* Dev - Handing ACF format date
 
 ### [1.1.0] - (10/09/2021)
 
