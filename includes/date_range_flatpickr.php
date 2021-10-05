@@ -43,9 +43,10 @@ class FacetWP_FS_DateRange_Flatpickr {
         $min = empty( $values[0] ) ? false : $values[0];
         $max = empty( $values[1] ) ? false : $values[1];
 
-        $fields = isset( $facet['fields'] ) ? $facet['fields'] : 'both';
+        $fields       = isset( $facet['fields'] ) ? $facet['fields'] : 'both';
         $compare_type = empty( $facet['compare_type'] ) ? 'basic' : $facet['compare_type'];
-        $is_dual = ! empty( $facet['source_other'] );
+        $is_dual      = ! empty( $facet['source_other'] );
+        $date_format  = empty( $facet['date_format'] ) ? '' : $facet['date_format'];
 
         if ( $is_dual && 'basic' != $compare_type ) {
             if ( 'exact' == $fields ) {
@@ -54,6 +55,15 @@ class FacetWP_FS_DateRange_Flatpickr {
 
             $min = ( false !== $min ) ? $min : '0000-00-00';
             $max = ( false !== $max ) ? $max : '3000-12-31';
+
+            /**
+             * Change compare date format if data not stocked in the format YYYY-MM-DD like ACF Field
+             */
+
+            if ( ! empty($date_format) ) {
+                $min = date( $date_format , strtotime($min) );
+                $max = date( $date_format , strtotime($max) );
+            }
 
             /**
              * Enclose compare
@@ -161,6 +171,15 @@ class FacetWP_FS_DateRange_Flatpickr {
                 </div>
             </div>
             <div><input type="text" class="facet-format" placeholder="Y-m-d" /></div>
+        </div>
+        <div class="facetwp-row">
+            <div>
+                <div class="facetwp-tooltip">
+                    <?php _e('Compare date format', 'fwp-front'); ?>:
+                    <div class="facetwp-tooltip-content">See available <a href="https://www.php.net/manual/fr/datetime.format.php" target="_blank">formatting date</a></div>
+                </div>
+            </div>
+            <div><input type="text" class="facet-date-format" placeholder="Ymd" /></div>
         </div>
         <div class="facetwp-row">
             <div>

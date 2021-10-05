@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.1.1 - (05/10/2021) =
+
+* Add - New option for date format search.
+
 = 1.1.0 - (10/09/2021) =
 
 * Add - Leaflet Map addon.
