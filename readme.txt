@@ -2,7 +2,7 @@
 Contributors: Faire Savoir
 Tags: facetwp, facets types, fs
 Requires at least: 5.0
-Tested up to: 5.7.2
+Tested up to: 5.8.1
 Requires PHP: 7.0
 
 This plugin is powered by Faire-Savoir. It creates useful Facets Types for the FacetWP plugin.
