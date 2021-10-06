@@ -1,4 +1,4 @@
-# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.1.1-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
+# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.1.2-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
 
 This plugin creates useful Facets Types for the FacetWP plugin.
 
@@ -24,9 +24,15 @@ Use automatic updater.
 
 ## Changelog
 
+### [1.1.2] - (06/10/2021)
+
+* Dev - Delete option for date
+* Dev - Handing ACF format date
+
 ### [1.1.1] - (05/10/2021)
 
-* Dev - Handing ACF format date
+* Add - New option for date format search.
+
 
 ### [1.1.0] - (10/09/2021)
 

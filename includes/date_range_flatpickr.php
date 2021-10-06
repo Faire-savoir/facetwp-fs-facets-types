@@ -285,9 +285,7 @@ class FacetWP_FS_DateRange_Flatpickr {
             }
 		}
 
-        
-
-		return $params;
+        return $params;
 	}
 
 }
