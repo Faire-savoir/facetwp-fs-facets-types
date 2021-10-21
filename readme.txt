@@ -21,6 +21,11 @@ See the documentation for more informations.
 
 == Changelog ==
 
+
+= 1.1.3 - (21/10/2021) =
+
+* Fix - Deprected function in futur realeases in leaflet changed
+
 = 1.1.2 - (06/10/2021) =
 
 * Dev - Delete option for date
