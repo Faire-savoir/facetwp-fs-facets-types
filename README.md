@@ -1,4 +1,4 @@
-# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.1.3-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
+# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.1.4-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
 
 This plugin creates useful Facets Types for the FacetWP plugin.
 
@@ -23,6 +23,10 @@ This plugin requires "FacetWP" plugin
 Use automatic updater.
 
 ## Changelog
+
+### [1.1.4] - (16/11/2021)
+
+* Add - Hook to alter click on marker "facetwp/fwp_leaflet_map/marker/click"
 
 ### [1.1.3] - (21/10/2021)
 

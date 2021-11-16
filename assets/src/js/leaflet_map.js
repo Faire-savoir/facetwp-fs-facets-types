@@ -194,6 +194,9 @@ var FWP_LEAFLET_MAP = FWP_LEAFLET_MAP || {};
 			}
 
 		});
+		FWP.hooks.doAction('facetwp/fwp_leaflet_map/marker/click', {
+			'markers': FWP_LEAFLET_MAP.markersArray
+		});
 
 		if (0 < Object.keys(FWP_LEAFLET_MAP.allMarkers.getBounds()).length) {
 			FWP_LEAFLET_MAP.map.addLayer(FWP_LEAFLET_MAP.allMarkers).fitBounds(FWP_LEAFLET_MAP.allMarkers.getBounds(), { padding: [50, 50] });

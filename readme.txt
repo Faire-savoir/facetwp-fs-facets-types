@@ -21,6 +21,9 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.1.4 - (16/11/2021) =
+
+* Add - Hook to alter click on marker "facetwp/fwp_leaflet_map/marker/click"
 
 = 1.1.3 - (21/10/2021) =
 

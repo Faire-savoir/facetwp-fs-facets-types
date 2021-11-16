@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FacetWP - FS Facets Types
  * Description: Add Facets Types created by FS
- * Version:     1.1.3
+ * Version:     1.1.4
  * Author:      Faire Savoir
  * Author URI:  https://www.faire-savoir.com/
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class FacetWP_FS_Facets_Types {
 
-	var $version = '1.1.3';
+	var $version = '1.1.4';
 	var $plugin_name = 'FacetWP - FS Facets Types';
 	var $plugin_id = 'facetwp-fs-facets-types';
 
