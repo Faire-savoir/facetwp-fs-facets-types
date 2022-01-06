@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.1.5 - (06/01/2022) =
+
+* Fix - FacetWP 3.9 compatibility for Leaflet Map
+
 = 1.1.4 - (16/11/2021) =
 
 * Add - Hook to alter click on marker "facetwp/fwp_leaflet_map/marker/click"
