@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FacetWP - FS Facets Types
  * Description: Add Facets Types created by FS
- * Version:     1.1.5
+ * Version:     1.2.0
  * Author:      Faire Savoir
  * Author URI:  https://www.faire-savoir.com/
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class FacetWP_FS_Facets_Types {
 
-	var $version = '1.1.5';
+	var $version = '1.2.0';
 	var $plugin_name = 'FacetWP - FS Facets Types';
 	var $plugin_id = 'facetwp-fs-facets-types';
 
@@ -100,12 +100,16 @@ class FacetWP_FS_Facets_Types {
 	 * Fired by `plugins_loaded` action hook.
 	 */
 	public function init() {
+		
 		include( 'includes/date_range_flatpickr.php' );
 		include( 'includes/leaflet_map.php' );
 		
 		add_filter( 'facetwp_facet_types', function( $facet_types ) {
+			include( 'includes/fs_list_checkboxes.php' );
+
 			$facet_types['date_range_flatpickr'] = new FacetWP_FS_DateRange_Flatpickr();
 			$facet_types['leaflet_map'] = new FacetWP_FS_Leaflet_Map();
+			$facet_types['fs_list_checkboxes'] = new FacetWP_FS_List_Checkboxes();
 			return $facet_types;
 		});
 	}

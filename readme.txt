@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.2.0 - (04/02/2022) =
+
+* Add - Facet Type FS List Checkboxes
+
 = 1.1.5 - (06/01/2022) =
 
 * Fix - FacetWP 3.9 compatibility for Leaflet Map
