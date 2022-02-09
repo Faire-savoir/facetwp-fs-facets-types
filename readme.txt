@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.2.1 - (09/02/2022) =
+
+* Enhancement - Can choice a date less than today
+
 = 1.2.0 - (04/02/2022) =
 
 * Add - Facet Type FS List Checkboxes

@@ -16,8 +16,6 @@
 				altFormat: FWP.settings[facet_name].format,
 				disableMobile: false,
 				locale: FWP_JSON.date_range_flatpickr.locale,
-				// On disable les dates antérieures à aujourd'hui
-				minDate : "today",
 				mode : "range",
 				onChange : function (dateObj, dateStr, instance) {
 					// Quand la date_début et la date_fin sont renseignés
