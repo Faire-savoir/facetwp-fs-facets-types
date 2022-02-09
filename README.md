@@ -24,7 +24,7 @@ Use automatic updater.
 
 ## Changelog
 
-### [1.2.1] - (09/02/2022) =
+### [1.2.1] - (09/02/2022)
 
 * Enhancement - Can choice a date less than today
 
