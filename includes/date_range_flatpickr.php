@@ -140,7 +140,7 @@ class FacetWP_FS_DateRange_Flatpickr {
             <div>
                 <data-sources
                     :facet="facet"
-                    settingName="source_other">
+                    setting-name="source_other">
                 </data-sources>
             </div>
         </div>

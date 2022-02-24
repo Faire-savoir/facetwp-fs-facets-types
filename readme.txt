@@ -2,7 +2,7 @@
 Contributors: Faire Savoir
 Tags: facetwp, facets types, fs
 Requires at least: 5.0
-Tested up to: 5.8.1
+Tested up to: 5.9
 Requires PHP: 7.0
 
 This plugin is powered by Faire-Savoir. It creates useful Facets Types for the FacetWP plugin.
@@ -20,6 +20,10 @@ See the documentation for more informations.
 
 
 == Changelog ==
+
+= 1.2.2 - (24/02/2022) =
+
+* Fix - FacetWP 3.9 compatibility for Date Range Picker
 
 = 1.2.1 - (09/02/2022) =
 
