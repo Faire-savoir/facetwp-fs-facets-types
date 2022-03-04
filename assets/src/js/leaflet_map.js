@@ -223,12 +223,14 @@ var FWP_LEAFLET_MAP = FWP_LEAFLET_MAP || {};
 			FWP_LEAFLET_MAP.mc = new markerClusterGroup(FWP_LEAFLET_MAP.map, FWP_LEAFLET_MAP.markersArray, config.cluster);
 		}
 
-		$('*[data-post-id-sync-map]').on('mouseenter', function () {
-			var post_id = $(this).attr('data-post-id-sync-map');
-			if (post_id != '') {
-				syncronize_hover(post_id);
+		document.body.addEventListener('mouseenter', function(e) {
+			if ( e.target.hasAttribute('data-post-id-sync-map') ) {
+				var post_id = e.target.dataset.postIdSyncMap;
+				if (post_id != '') {
+					syncronize_hover(post_id);
+				}
 			}
-		});
+		}, true);
 
 	});
 
