@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.2.3 - (13/05/2022) =
+
+* Add - FS Hybride Select
+
 = 1.2.2 - (24/02/2022) =
 
 * Fix - FacetWP 3.9 compatibility for Date Range Picker

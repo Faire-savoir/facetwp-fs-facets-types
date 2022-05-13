@@ -1,11 +1,11 @@
-# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.2.2-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
+# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.2.3-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
 
 This plugin creates useful Facets Types for the FacetWP plugin.
 
 ## Informations
 
 - Requires at least : ![wordpress version](https://img.shields.io/badge/WP-5.3.2-orange.svg)
-- Tested up to : ![wordpress version](https://img.shields.io/badge/WP-5.9-green.svg)
+- Tested up to : ![wordpress version](https://img.shields.io/badge/WP-5.9.3-green.svg)
 - Requires PHP : ![wordpress version](https://img.shields.io/badge/PHP-7.0-blue.svg)
 
 ## Description
@@ -23,6 +23,10 @@ This plugin requires "FacetWP" plugin
 Use automatic updater.
 
 ## Changelog
+
+### [1.2.3] - (13/05/2022)
+
+* Add - FS Hybride Select
 
 ### [1.2.2] - (24/02/2022)
 
