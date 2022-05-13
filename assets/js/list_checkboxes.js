@@ -1,7 +1,7 @@
 (function ($) {
 
 	/* ======== List Checkboxes ======== */
-    FWP.hooks.addAction('facetwp/refresh/fs_list_checkboxes', function($this, facet_name) {
+    function fs_list_refresh ($this, facet_name) {
         var selected_values = [];
         $this.find('.facetwp-checkbox.checked').each(function() {
             selected_values.push(
@@ -9,9 +9,9 @@
             );
         });
         FWP.facets[facet_name] = selected_values;
-    });
+    };
 
-    FWP.hooks.addFilter('facetwp/selections/fs_list_checkboxes', function(output, params) {
+    function fs_list_selections (output, params) {
         var choices = [];
         $.each(params.selected_values, function(val) {
             var $item = params.el.find('.facetwp-checkbox[data-value="' + val + '"]');
@@ -26,7 +26,13 @@
             }
         });
         return choices;
-    });
+    };
+
+    FWP.hooks.addAction('facetwp/refresh/fs_list_checkboxes', fs_list_refresh, 10, 2);
+    FWP.hooks.addAction('facetwp/refresh/fs_hybride_select', fs_list_refresh, 10, 2);
+
+    FWP.hooks.addFilter('facetwp/selections/fs_list_checkboxes', fs_list_selections, 10, 2);
+    FWP.hooks.addFilter('facetwp/selections/fs_hybride_select', fs_list_selections, 10, 2);
     
 
     $().on('click', '.facetwp-type-fs_list_checkboxes .facetwp-expand, .facetwp-type-fs_hybride_selecte .facetwp-expand', function(e) {
