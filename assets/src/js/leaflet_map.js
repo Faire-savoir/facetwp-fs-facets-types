@@ -224,7 +224,7 @@ var FWP_LEAFLET_MAP = FWP_LEAFLET_MAP || {};
 		}
 
 		document.body.addEventListener('mouseenter', function(e) {
-			if ( e.target.hasAttribute('data-post-id-sync-map') ) {
+			if ( e.target.hasAttribute('data-post-id-sync-map') && ! e.target.closest('.leaflet-container') ) {
 				var post_id = e.target.dataset.postIdSyncMap;
 				if (post_id != '') {
 					syncronize_hover(post_id);
