@@ -190,7 +190,14 @@ class FacetWP_FS_Leaflet_Map {
 		}
 		// get paginated post IDs
 		else {
-			$post_ids = (array) wp_list_pluck( FWP()->facet->query->posts, 'ID' );
+			$posts =  FWP()->facet->query->posts;
+			if( !empty( $posts[0]) && is_object( $posts[0] ) ) {
+				$post_ids = (array) wp_list_pluck( $posts, 'ID' );
+			}
+			else {
+				// WP_QUery with filter fields = 'ids'
+				$post_ids = $posts;
+			}
 		}
 
 		// remove duplicates

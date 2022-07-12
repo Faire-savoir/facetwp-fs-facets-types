@@ -9,7 +9,10 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class FacetWP_FS_Facets_Types {
+
+if( ! class_exists('FacetWP_FS_Facets_Types') ) :
+
+final class FacetWP_FS_Facets_Types {
 
 	var $version = '1.2.3';
 	var $plugin_name = 'FacetWP - FS Facets Types';
@@ -31,31 +34,34 @@ class FacetWP_FS_Facets_Types {
 		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_URL',$url );
 		define( 'FACETWP_FS_FACETS_TYPES_PLUGIN_PATH',$path );
 
-		// Check Updates for plugin
-		add_action( 'admin_init', [ $this, 'check_updates' ] );
 		// Check Dependancies
 		add_action( 'admin_init', [ $this,'check_plugins_dependancies' ] );
 
 		// Init Plugin
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
-	}
 
-	/**
-	 * Check plugin updates thanks to github repository link.
-	 */
-	public function check_updates(){
 		$plugins_dir = plugin_dir_path( __DIR__ );
 		if ( file_exists($plugins_dir.'plugin-update-checker/plugin-update-checker.php') ) {
+
 			require $plugins_dir.'plugin-update-checker/plugin-update-checker.php';
 			$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 				'https://github.com/Faire-savoir/'.$this->plugin_id,
 				__FILE__,
 				$this->plugin_id
 			);
+
+			$token_api = get_option( 'options_tis_wp_core_token_api', '' );
+			if ( empty($token_api) ){
+				$token_api = get_option( 'tis_wp_core_get_token_api', '' );
+			}
+			if( !empty( $token_api ) ) {
+				$myUpdateChecker->setAuthentication( $token_api );
+			}
 			$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
-			add_filter('puc_request_info_result-'.$this->plugin_id,[ $this,'puc_modify_plugin_render' ]);
-			add_filter('puc_view_details_link_position-'.$this->plugin_id,[ $this,'puc_modify_link_position' ]);
+			add_filter( 'puc_request_info_result-' . $this->plugin_id,[ $this, 'puc_modify_plugin_render' ] );
+			add_filter( 'puc_view_details_link_position-' . $this->plugin_id,[ $this, 'puc_modify_link_position' ] );
+
 		}
 	}
 
@@ -103,7 +109,6 @@ class FacetWP_FS_Facets_Types {
 		
 		include( 'includes/date_range_flatpickr.php' );
 		include( 'includes/leaflet_map.php' );
-		//include( 'includes/fs_hybride_select.php' );
 		
 		add_filter( 'facetwp_facet_types', function( $facet_types ) {
 			include( 'includes/fs_list_checkboxes.php' );
@@ -120,3 +125,5 @@ class FacetWP_FS_Facets_Types {
 
 // Instantiate FacetWP_FS_DateRange.
 new FacetWP_FS_Facets_Types();
+
+endif; // class_exists check

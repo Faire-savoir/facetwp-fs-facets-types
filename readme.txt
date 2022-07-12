@@ -21,6 +21,11 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.2.4 - (12/07/2022) =
+
+* Add - JS for FS Hybride Select
+* Fix - Bug when wp_query fields filter by "ids"
+
 = 1.2.3 - (13/05/2022) =
 
 * Add - FS Hybride Select
