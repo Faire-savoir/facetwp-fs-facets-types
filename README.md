@@ -1,4 +1,4 @@
-# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.2.4-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
+# FacetWP - FS Facets Types [![plugin version](https://img.shields.io/badge/version-v1.2.5-color.svg)](https://github.com/Faire-savoir/facetwp-fs-facets-types/releases/latest)
 
 This plugin creates useful Facets Types for the FacetWP plugin.
 
@@ -23,6 +23,10 @@ This plugin requires "FacetWP" plugin
 Use automatic updater.
 
 ## Changelog
+
+### [1.2.5] - (28/07/2022)
+
+* Fix - Duplicate marker of same content
 
 ### [1.2.4] - (12/07/2022)
 

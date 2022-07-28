@@ -21,6 +21,10 @@ See the documentation for more informations.
 
 == Changelog ==
 
+= 1.2.5 - (28/07/2022) =
+
+* Fix - Duplicate marker of same content
+
 = 1.2.4 - (12/07/2022) =
 
 * Add - JS for FS Hybride Select

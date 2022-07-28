@@ -222,7 +222,7 @@ class FacetWP_FS_Leaflet_Map {
 					$args = apply_filters( 'facetwp_leaflet_map_markers_filter', $args, $post_id );
 
 					if ( false !== $args ) {
-						$settings['locations'][] = $args;
+						$settings['locations'][$post_id] = $args;
 					}
 				}
 			}

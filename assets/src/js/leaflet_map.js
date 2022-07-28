@@ -142,7 +142,9 @@ var FWP_LEAFLET_MAP = FWP_LEAFLET_MAP || {};
 			FWP_LEAFLET_MAP.allMarkers = L.featureGroup();
 		}
 
-		$.each(FWP.settings.leaflet_map.locations, function (obj, idx) {
+		idx = 0;
+		$.each(FWP.settings.leaflet_map.locations, function (obj) {
+			++idx;
 			var args = Object.assign({}, obj);
 			args.map = FWP_LEAFLET_MAP.map;
 
@@ -152,7 +154,7 @@ var FWP_LEAFLET_MAP = FWP_LEAFLET_MAP || {};
 					iconAnchor: [24, 72],
 					popupAnchor: [0, -76],
 					className: 'marker post-id-' + obj.post_id + ' type-' + obj.type + ' category-' + obj.category,
-					html: '<div class="pin"><span class="content">' + parseInt(1 + idx) + '<span></div>'
+					html: '<div class="pin"><span class="content">' + parseInt(idx) + '<span></div>'
 				}),
 			}).addTo(FWP_LEAFLET_MAP.allMarkers);
 
